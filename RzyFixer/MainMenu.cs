@@ -44,6 +44,7 @@ namespace RzyFixer
                 Console.Clear();
                 try { RzyFixer.Protections.CalliFix.Execute(module); }
                 catch (Exception e) { Logger.Write($"Error while trying to remove Calli Protection." + e, Logger.Type.Error); }
+                FileSaver.SaveFile(directory, module);
             }));
             Controls.Add(new Button("DoubleParse Fixer", sender =>
             {
